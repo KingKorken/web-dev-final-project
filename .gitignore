@@ -1,0 +1,5 @@
+.DS_Store
+
+# Confidential / non-project data — never commit
+*.csv
+Our Family Business*

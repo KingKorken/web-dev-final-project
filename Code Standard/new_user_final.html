@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" />
+    <title>Enter your data</title>
+    <style type="text/css">
+
+      /* General body style */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+
+      /* Form centring and styling */
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Style of the tables in the form */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 10px;
+        vertical-align: middle;
+      }
+
+      /* Cell Titles */
+      td.style2 {
+        font-weight: bold;
+        width: 40%;
+      }
+
+      /* Styling for text and button entries */
+      input[type="text"],
+      input[type="password"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-right: 8px;
+      }
+
+      input[type="button"] {
+        padding: 10px 20px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+    <script lang="Javascript">
+
+                // Validate password length and special characters
+                // containsSpecial-->  Flag to check special characters
+            function validatePassword() {
+              // Get the password
+              let password = document.getElementById("pass").value;
+              let specialChars = "@#$&";
+              let containsSpecial = false; 
+
+              // Check password length
+              if (password.length < 8) {
+                alert("The password must have at least 8 characters."); 
+                document.getElementById("pass").value = "";
+                document.getElementById("pass").focus();
+                return;
+              }
+
+              // Check special characters 
+              let char = ""
+              for (char of specialChars) {
+                if (password.includes(char)) {
+                  containsSpecial = true;
+                }
+              }
+
+              // If no special characters are found
+              if (containsSpecial == false) {
+                alert("The password must include at least one of these characters: @ # $ &.");
+                document.getElementById("pass").value = "";
+                document.getElementById("pass").focus();
+              }
+            }
+
+            // Validate acceptance of terms
+            function validateTerms() {
+              let termsAccepted = document.getElementById("terms").checked;
+
+              if (termsAccepted == false) {
+                alert("You must accept the terms and conditions."); 
+              } else {
+                alert("Form successfully submitted.");
+              }
+            }
+
+            // Validate email
+            function validateEmail() {
+              let email = document.getElementById("email").value;
+
+              // Check if the email contains '@'
+              if (email.indexOf("@", 0) == -1) {
+                alert("The email must contain '@'.");
+                document.getElementById("email").value = "";
+                document.getElementById("email").focus();
+                return;
+              }
+
+              // Check if the email starts with '@'
+             if (email.charAt(0) == "@") {
+                alert("The email cannot start with '@'.");
+                document.getElementById("email").value = "";
+                document.getElementById("email").focus();
+              }
+            }
+
+         function validateBirthdate() {
+            // Get the birthdate value from the input field and convert it to a Date object
+          let birthdateStr = document.getElementById("xdate").value;
+          let birthdate = new Date(birthdateStr);
+
+          // Create a Date object for today and remove the time part for accurate comparison
+          let today = new Date();
+                                                            //  today.setHours(0, 0, 0, 0);
+
+          // Check if the birthdate is in the future
+          if (birthdate > today) {
+             alert("The birthdate cannot be in the future.");
+              document.getElementById("xdate").value = "";
+              document.getElementById("xdate").focus();
+    }
+}
+
+            //  Validate phone number
+            function validatePhone() {
+              // Get the prefix
+              let prefix = document.getElementById("prefix").value; 
+              // Get the phone number
+              let phone = document.getElementById("phone").value; 
+
+              // Check if the phone contains non-numeric characters
+              if (isNaN(phone) == true) {
+                alert("The phone number must contain only numbers.");
+                document.getElementById("phone").value = "";
+                document.getElementById("phone").focus();
+                return;
+              }
+
+              // Check if it's a Spanish mobile
+              if (prefix === "34" && phone.charAt(0) !== "6") {
+                alert("Spanish mobile phone numbers must start with '6'.");
+                document.getElementById("phone").value = "";
+                document.getElementById("phone").focus();
+              }
+            }
+    </script>
+  </head>
+
+  <body>
+    <form name="f1" class="style1">
+      <h1>Enter your data:</h1>
+      <table>
+        <tr>
+          <td class="style2">Name:</td>
+          <td>
+            <input name="name" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td class="style2">Password:</td>
+          <td>
+            <input
+              name="password"
+              type="password"
+              id="pass"
+              required
+              onchange="validatePassword()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="style2">Birthdate:</td>
+          <td>
+            <input
+              name="bdate"
+              id="xdate"
+              type="date"
+              required
+              onchange="validateBirthdate()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="style2">Gender:</td>
+          <td>
+            <input checked="checked" name="gender" type="radio" value="M" />
+            Male
+            <input name="gender" type="radio" value="F" /> Female
+          </td>
+        </tr>
+        <tr>
+          <td class="style2">E-Mail:</td>
+          <td>
+            <input
+              name="email"
+              id="email"
+              type="text"
+              required
+              onchange="validateEmail()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="style2">Phone Number:</td>
+          <td>
+            <select name="prefix" id="prefix">
+              <option value="33" selected="selected">+33</option>
+              <option value="34">+34</option>
+              <option value="44">+44</option>
+            </select>
+            <input
+              name="phone"
+              type="text"
+              id="phone"
+              required
+              onchange="validatePhone()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="style2">Terms&amp;Cond:</td>
+          <td>
+            <input name="terms" type="checkbox" id="terms" value="1" />
+          </td>
+        </tr>
+        <tr>
+          <td class="style2">&nbsp;</td>
+          <td>
+            <input
+              name="Submit1"
+              type="button"
+              value="Submit data"
+              onclick="validateTerms()"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
