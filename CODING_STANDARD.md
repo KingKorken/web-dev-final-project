@@ -195,7 +195,9 @@ no frameworks.
 ## 7. SQL / Database
 
 ### ✅ Allowed
-- `CREATE TABLE` with simple column types (`INT`, `VARCHAR`, `DATE`)
+- `CREATE TABLE` with simple column types (`INT`, `VARCHAR`, `DATE`, and
+  `DECIMAL(x,2)` for prices/money)
+- A simple `PRIMARY KEY` with `AUTO_INCREMENT` for the `id` column
 - `SELECT ... FROM ... WHERE ...`
 - `INSERT INTO ... VALUES (...)`
 - `UPDATE` / `DELETE` with a simple `WHERE`
