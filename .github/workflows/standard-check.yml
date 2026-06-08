@@ -1,0 +1,20 @@
+name: Coding Standard Check
+
+# Runs the skill-level checker on every Pull Request and on pushes to main.
+# If any code above our level is found, the check fails (red X) and the PR
+# cannot be merged while branch protection is on.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Run skill-level checker
+        run: bash check_standard.sh
