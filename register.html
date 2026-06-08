@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Create an account</title>
+</head>
+<body>
+    <form class="box" name="reg_user" method="POST" action="register_user.php">
+        <h4>Create an account</h4>
+        <input class="controls" type="text" name="firstname" placeholder="First name" required>
+        <input class="controls" type="text" name="lastname" placeholder="Last name" required>
+        <input class="controls" type="text" name="username" placeholder="Username" required>
+        <input class="controls" type="password" name="pass" placeholder="Password" required>
+        <p><input type="checkbox" name="administrator"> I am an administrator</p>
+        <input class="botons" type="submit" value="Register">
+        <p><a href="login.html">Already have an account?</a></p>
+    </form>
+</body>
+</html>

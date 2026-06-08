@@ -1,0 +1,65 @@
+/* ===========================================================
+   style.css  -  shared styles for the subscription tracker
+   Plain, basic styling only (see DESIGN_STANDARD.md).
+   =========================================================== */
+
+/* General page */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* A centred white box used for forms and pages */
+.box {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Text inputs and selects */
+.controls {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+/* Green buttons */
+.botons,
+.single-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.botons:hover,
+.single-button:hover {
+  background-color: #45a049;
+}
+
+/* Table that lists the subscriptions */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}

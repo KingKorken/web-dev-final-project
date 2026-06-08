@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Add a subscription</title>
+    <script lang="Javascript">
+
+        // Check that the cost is a number
+        function validateCost() {
+          let cost = document.getElementById("cost").value;
+
+          if (isNaN(cost) == true) {
+            alert("The cost must be a number, for example 9.99");
+            document.getElementById("cost").value = "";
+            document.getElementById("cost").focus();
+          }
+        }
+    </script>
+</head>
+<body>
+    <form class="box" name="add_sub" method="POST" action="add_subscription.php">
+        <h4>Add a subscription</h4>
+        <input class="controls" type="text" name="service" placeholder="Service (e.g. Netflix)" required>
+        <input class="controls" type="text" name="cost" id="cost" placeholder="Cost (e.g. 9.99)" required onchange="validateCost()">
+        <select class="controls" name="billing_cycle">
+            <option value="monthly">monthly</option>
+            <option value="yearly">yearly</option>
+        </select>
+        <input class="controls" type="date" name="renewal_date" required>
+        <input class="controls" type="text" name="sub_username" placeholder="Service username (use FAKE data)">
+        <input class="controls" type="text" name="sub_password" placeholder="Service password (use FAKE data)">
+        <input class="botons" type="submit" value="Add subscription">
+        <p><a href="dashboard.php">Cancel</a></p>
+    </form>
+</body>
+</html>
