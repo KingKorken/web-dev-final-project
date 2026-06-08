@@ -79,6 +79,13 @@ check '\brole[[:space:]]*='                        'role= attribute. Not learned
 check '\bdata-[a-zA-Z]'                            'data-* attributes. Not learned.'
 check '<(canvas|svg|video|audio)\b'                'Media/graphics elements (canvas/svg/video/audio). Not learned.'
 
+# ---------- Design / look (see DESIGN_STANDARD.md) ----------
+check '(linear-gradient|radial-gradient|conic-gradient)' 'Gradients. Use a single flat colour (DESIGN_STANDARD.md).'
+check 'fonts\.(googleapis|gstatic)\.com'         'Google Fonts. Use default system fonts only.'
+check '(bootstrap|tailwind|bulma|materialize|font-?awesome)' 'A CSS framework / icon library. We write plain CSS only.'
+check '(cdn\.jsdelivr|cdnjs\.cloudflare|unpkg\.com)' 'A CDN library link. Not allowed - plain CSS only.'
+check '<link[^>]+href[[:space:]]*=[[:space:]]*["'"'"']https?://' 'External stylesheet from the internet. Use our own style.css only.'
+
 echo "-----------------------------------------"
 if [ "$violations" -eq 0 ]; then
   echo "OK  All clear - code matches our skill level."

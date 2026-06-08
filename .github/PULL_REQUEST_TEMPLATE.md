@@ -12,6 +12,8 @@
 - [ ] I used `getElementById` (not `querySelector`) and inline `onclick` /
       `onchange` (not `addEventListener`).
 - [ ] No flexbox, grid, arrow functions, `fetch`, or template literals.
+- [ ] The page **looks** plain/basic per `DESIGN_STANDARD.md` (no web fonts,
+      icons, gradients, animations, or framework templates).
 - [ ] **I can explain every line of this change out loud** if a teacher asks.
 - [ ] If I needed an advanced technique, I stopped and asked the group instead.
 

@@ -4,7 +4,11 @@ Thanks for working on our Mobile & Web Development project. To keep the whole
 codebase at the level we have actually learned in class, **every contribution
 must follow [`CODING_STANDARD.md`](CODING_STANDARD.md).**
 
-Please read that file first. The rules below are how we keep to it as a team.
+It must also **look** like our class work, so follow
+[`DESIGN_STANDARD.md`](DESIGN_STANDARD.md) for the visual side (plain, basic,
+slightly old-fashioned — no modern or AI-looking designs).
+
+Please read both files first. The rules below are how we keep to them as a team.
 
 ---
 

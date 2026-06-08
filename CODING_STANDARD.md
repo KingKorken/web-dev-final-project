@@ -6,6 +6,10 @@
 > write the best or most modern code possible — it is to write code that looks
 > like *we* could have written it by hand, using only the techniques shown in
 > our class examples.
+>
+> This file covers which code *techniques* we may use. For how the finished page
+> should *look* (plain, basic, slightly dated — not modern or AI-looking), see
+> the companion file **`DESIGN_STANDARD.md`**.
 
 ---
 
